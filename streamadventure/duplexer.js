@@ -1,5 +1,5 @@
 var spawn = require('child_process').spawn,
-  duplexer = require('duplexer2');
+  duplexer = require('duplexer');
 
 module.exports = function(cmd, args) {
   var ps = spawn(cmd, args);

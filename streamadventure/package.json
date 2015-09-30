@@ -10,9 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "concat-stream": "^1.5.0",
+    "duplexer": "^0.1.1",
     "duplexer2": "^0.1.0",
     "request": "^2.64.0",
     "split": "^1.0.0",
+    "stream-combiner": "^0.2.2",
+    "tar": "^2.2.1",
     "through2": "^2.0.0",
     "trumpet": "^1.7.1",
     "websocket-stream": "^2.0.2"
