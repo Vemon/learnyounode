@@ -1,17 +1,16 @@
 module.exports = function(fn, n) {
-  var args = [];
   var num = n ? n : fn.length;
-  console.log(n, num);
-  console.log('fn', fn);
-  var curryN = function(param) {
-    args.push(param);
-    console.log(num);
-    if (--num === 0) {
-      return fn.apply(this, args);
-    } else {
-      return curryN;
-    }
-  };
 
-  return curryN;
+  return (function curryN(fn, counter, arr) {
+    var args = arr.slice(0);
+    var num = --counter;
+
+    return function(param) {
+      if (num <= 0) {
+        return fn.apply(this, args.concat(param));
+      } else {
+        return curryN(fn, num, args.concat(param));
+      }
+    };
+  })(fn, num, []);
 };
